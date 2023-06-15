@@ -128,6 +128,6 @@ A huge thanks to [Microverse](https://www.microverse.org) for their constant sup
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md) licensed.
+This project is [licensed](./LICENSE).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
