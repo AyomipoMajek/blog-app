@@ -2,10 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   let(:user) { User.create(name: 'John Doe', posts_counter: 0) }
-  let(:post) { Post.new(author_id: user, title: 'Sample Post', likes_counter: 0, comments_counter: 0) }
+  let(:post) { Post.new(author_id: user.id, title: 'Sample Post', likes_counter: 0, comments_counter: 0) }
   let(:comment1) { Comment.create(post_id: post.id, user_id: user.id, text: 'Sample Comment') }
   let(:comment2) { Comment.create(post_id: post.id, user_id: user.id, text: 'Sample Comment') }
   let(:comment3) { Comment.create(post_id: post.id, user_id: user.id, text: 'Sample Comment') }
+  let(:comment4) { Comment.create(post_id: post.id, user_id: user.id, text: 'Sample Comment') }
+  let(:comment5) { Comment.create(post_id: post.id, user_id: user.id, text: 'Sample Comment') }
 
   describe 'validations' do
     it { should validate_presence_of(:title) }
