@@ -1,0 +1,8 @@
+<h1>User's Posts</h1>
+<p>User Name: <%= @user.name %></p>
+<p>Number of Posts: <%= @user.posts.count %></p>
+<% @posts.each do |post| %>
+  <h2>Post #<%= post.id %></h2>
+  <p><%= post.content %></p>
+  <!-- Placeholder for displaying comments and likes for each post -->
+<% end %>
