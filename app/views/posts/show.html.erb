@@ -1,1 +1,20 @@
-<h1> show details about a specific post</h1>
+<%= stylesheet_link_tag 'style'%>
+
+<section class="post-section">
+  <div class="post-details2">
+    <div class='c-l2'>
+    <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
+    <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+    </div>
+    <div class='text'>
+    <p><%= @post.text %></p>
+    </div>
+  </div>
+
+  <div class="comment-list">
+    <% @comments=Post.find(@post.id).comments %>
+    <% @comments.each do |comment| %>
+      <p> <%= comment.author.name%>: <%= comment.text%> </p>
+    <% end %>
+  </div>
+</section>

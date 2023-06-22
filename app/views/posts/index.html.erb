@@ -1,1 +1,40 @@
-<h1> show the list of posts </h1>
+<%= stylesheet_link_tag 'style'%>
+
+<section class="user-section">
+  <div class="user-details">
+    <div class="user-img">
+      <img src="<%= @user.photo %>">
+    </div>
+    <div class='about-user'>
+        <p class="user-name"><%= @user.name %></p>
+        <p class="number-of-posts">Number of Posts: <%= @user.posts.count %></p>
+    </div>
+  </div>
+
+  <div class="user-posts">
+  <% @posts.each_with_index do |post, index| %>
+    <div class="post-details">
+      <h2>Post #<%= index + 1 %></h2>
+      <div class="post-content">
+        <a href="<%= post_path(post) %>">
+         <p><%= truncate(post.text, length: 50, separator: ' ') %></p>
+        </a>
+        <div class="c-l">
+            <p>Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></p>
+        </div>
+      </div>
+    </div>
+    <div class='comment-list'>
+          <% post.comments.each do |comment| %>
+            <p><%= comment.user.name %>: <%= comment.text %></p>
+          <% end %>
+      </div>
+  <% end %>
+</div>
+
+  <div class='see-button'>
+        <button class="see-all">
+          <%= link_to 'Pagination', user_posts_path(@user.id) %>
+        </button>
+      </div>
+</section>
