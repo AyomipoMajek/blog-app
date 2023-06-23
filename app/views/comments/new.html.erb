@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag 'style'%>
+
+<%= link_to 'Back', :back %>
+<h1>Add Comment</h1>
+
+<%= form_with(model: @comment, url: user_post_comments_path(@post.user, @post)) do |form| %>
+  <div class="comment">
+    <%= form.label :comment %>
+    <%= form.text_area :text, placeholder: 'enter comment...', required: true %>
+  </div>
+<div>
+  <%= form.button :submit, 'Create Comment', class: 'submit-button' %>
+</div>
+<% end %>

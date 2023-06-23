@@ -1,20 +1,30 @@
-<%= stylesheet_link_tag 'style'%>
+<%= stylesheet_link_tag 'style' %>
 
 <section class="post-section">
   <div class="post-details2">
     <div class='c-l2'>
-    <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
-    <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+      <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
+      <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
     </div>
     <div class='text'>
-    <p><%= @post.text %></p>
+      <p><%= @post.text %></p>
     </div>
   </div>
 
   <div class="comment-list">
     <% @comments=Post.find(@post.id).comments %>
     <% @comments.each do |comment| %>
-      <p> <%= comment.author.name%>: <%= comment.text%> </p>
+      <p><%= comment.user.name %>: <%= comment.text %></p>
+    <% end %>
+  </div>
+
+  <div class="comment-form">
+  <%= form_with(model: @comment, url: post_comments_path(@post)) do |form| %>
+    <div class="input">
+      <%= form.label :text, 'Comment' %>
+      <%= form.text_area :text, placeholder: 'Enter your comment...', required: true %>
+    </div>
+      <%= form.submit 'Create Comment', class: 'submit-button' %>
     <% end %>
   </div>
 </section>

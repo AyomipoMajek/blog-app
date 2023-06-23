@@ -1,22 +1,24 @@
+<%= stylesheet_link_tag 'style'%>
+
 <section class='user-section'>
   <div class='user-home'>
-        <div class='user-img'>
-          <img src="<%= @user.photo %>">
-        </div>
-        <div class='about-user'>
-          <p class="user-name"><%= @user.name %></p>
-          <p class="number-of-posts">Number of Posts: <%= @user.posts.count %></p>
-        </div>
-      </div>
+    <div class='user-img'>
+      <img src="<%= @user.photo %>">
+    </div>
+    <div class='about-user'>
+      <p class="user-name"><%= @user.name %></p>
+      <p class="number-of-posts">Number of Posts: <%= @user.posts.count %></p>
+    </div>
+  </div>
 
   <div class='user-bio'>
     <h2>Bio:</h2>
     <p><%= @user.bio %></p>
   </div>
 
-  <% if @user.recent_posts.any? %>
+  <% if @user.posts.any? %>
     <div class='posts'>
-      <% @user.posts.each_with_index do |post, index| %>
+      <% @user.posts.limit(3).each_with_index do |post, index| %>
         <div class='post-info'>
           <h3>Post #<%= index + 1 %></h3>
           <p><b>Title: &nbsp</b><%= post.title %></p>
@@ -31,10 +33,20 @@
           <%= link_to 'See all posts', user_posts_path(@user.id) %>
         </button>
       </div>
+      <div class='add-button'>
+        <button class="add-new">
+          <%= link_to 'Add New Post', new_user_post_path(user_id: current_user.id)%>
+        </button>
+      </div>
     </div>
   <% else %>
     <div class='no-posts'>
-      <p>This user has no posts yet !</p>
+      <p>This user has no posts yet!</p>
+      <div class='add-button'>
+        <button class="add-new">
+          <%= link_to 'Add New Post', new_user_post_path(user_id: current_user.id)%>
+        </button>
+      </div>
     </div>
   <% end %>
 </section>
