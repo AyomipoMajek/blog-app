@@ -157,7 +157,16 @@ a {
 .c-l2 {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+}
+
+.CLikes {
+  display: flex;
+  flex-direction: row;
+  margin-left: 60vw;
+}
+
+.CLikes p {
+  padding-left: 20px;
 }
 
 .text {

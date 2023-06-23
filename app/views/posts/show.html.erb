@@ -4,7 +4,16 @@
   <div class="post-details2">
     <div class='c-l2'>
       <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
-      <p>Comments: <%= @post.comments.count %>, Likes: <%= @post.likes.count %></p>
+      <div class='CLikes'>
+      <p>Comments: <%= @post.comments.count %></p>
+      <%= link_to post_likes_path(@post.author_id, @post.id) do %>
+      <p><%= "Likes: #{@post.likes_counter}" %></p>
+        <% end %>
+
+      <%= form_with url: post_likes_path(@post.author_id, @post.id) do |form| %>
+       <a><%= form.submit 'Like' %></a>
+      <% end %>
+    </div>
     </div>
     <div class='text'>
       <p><%= @post.text %></p>
