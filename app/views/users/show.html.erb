@@ -1,6 +1,40 @@
-<h1>User Profile</h1>
-<p>User Name: <%= @user.name %></p>
-<p>Number of Posts: <%= @user.posts.count %></p>
-<p>Bio: <%= @user.bio %></p>
-<!-- Placeholder for displaying user's posts -->
-<!-- Placeholder for displaying comments and likes for each post -->
+<section class='user-section'>
+  <div class='user-home'>
+        <div class='user-img'>
+          <img src="<%= @user.photo %>">
+        </div>
+        <div class='about-user'>
+          <p class="user-name"><%= @user.name %></p>
+          <p class="number-of-posts">Number of Posts: <%= @user.posts.count %></p>
+        </div>
+      </div>
+
+  <div class='user-bio'>
+    <h2>Bio:</h2>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <% if @user.recent_posts.any? %>
+    <div class='posts'>
+      <% @user.posts.each_with_index do |post, index| %>
+        <div class='post-info'>
+          <h3>Post #<%= index + 1 %></h3>
+          <p><b>Title: &nbsp</b><%= post.title %></p>
+          <p><%= post.text %></p>
+          <div class='c-l'>
+            <p>Comments: <%= post.comments.count %>, Likes: <%= post.likes.count %></p>
+          </div>
+        </div>
+      <% end %>
+      <div class='see-button'>
+        <button class="see-all">
+          <%= link_to 'See all posts', user_posts_path(@user.id) %>
+        </button>
+      </div>
+    </div>
+  <% else %>
+    <div class='no-posts'>
+      <p>This user has no posts yet !</p>
+    </div>
+  <% end %>
+</section>
