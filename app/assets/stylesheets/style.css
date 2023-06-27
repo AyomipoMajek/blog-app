@@ -95,14 +95,16 @@ a {
   padding-bottom: 10px;
 }
 
-.see-button {
+.see-button,
+.add-button {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 1.5rem;
 }
 
-.see-all {
+.see-all,
+.add-new {
   font-size: 1.3rem;
   padding: 8px;
   color: #000;
@@ -155,9 +157,77 @@ a {
 .c-l2 {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+}
+
+.CLikes {
+  display: flex;
+  flex-direction: row;
+  margin-left: 60vw;
+}
+
+.CLikes p {
+  padding-left: 20px;
 }
 
 .text {
   padding-top: 20px;
+}
+
+/* styling for create new post */
+
+.heading {
+  font-size: 2.3rem;
+  margin: 5rem 5rem 3rem 1rem;
+}
+
+.input {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-textarea {
+  height: 150px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.to-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.submit-button {
+  font-size: 1.3rem;
+  padding: 8px;
+  color: #000;
+  box-shadow: 5px 5px 2px 0 #000;
+  align-self: center;
+}
+
+/* styling for create new comment */
+
+.comment {
+  height: 150px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

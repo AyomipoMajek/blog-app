@@ -67,7 +67,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:dicodiaz/rails-blog.git
+  git clone git@github.com:AyomipoMajek/blog-app.git
 ```
 
 ### Usage
@@ -86,6 +86,11 @@ To run the project, execute the following commands:
 
 - GitHub: [@AyomipoMajek](https://github.com/AyomipoMajek)
 - Linkedin: [@AyomipoMajek](https://www.linkedin.com/in/ayomipomajek/)
+
+👤 **Edgard Soza**
+
+- [GitHub](https://github.com/edgardsoza)
+- [LinkedIn](https://www.linkedin.com/in/edgard-soza-sobalvarro/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
