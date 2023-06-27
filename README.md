@@ -87,6 +87,11 @@ To run the project, execute the following commands:
 - GitHub: [@AyomipoMajek](https://github.com/AyomipoMajek)
 - Linkedin: [@AyomipoMajek](https://www.linkedin.com/in/ayomipomajek/)
 
+👤 **Edgard Soza**
+
+- [GitHub](https://github.com/edgardsoza)
+- [LinkedIn](https://www.linkedin.com/in/edgard-soza-sobalvarro/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
