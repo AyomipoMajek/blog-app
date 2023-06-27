@@ -7,15 +7,18 @@ RSpec.describe 'Posts', type: :feature do
     end
 
     let!(:post1) do
-      Post.create(author: user, title: 'First Test', text: 'This is my first post', likes_counter: 0, comments_counter: 0)
+      Post.create(author: user, title: 'First Test', text: 'This is my first post', likes_counter: 0,
+                  comments_counter: 0)
     end
 
     let!(:post2) do
-      Post.create(author: user, title: 'Second Test', text: 'This is my second post', likes_counter: 0, comments_counter: 0)
+      Post.create(author: user, title: 'Second Test', text: 'This is my second post', likes_counter: 0,
+                  comments_counter: 0)
     end
 
     let!(:post3) do
-      Post.create(author: user, title: 'Third Test', text: 'This is my third post', likes_counter: 0, comments_counter: 0)
+      Post.create(author: user, title: 'Third Test', text: 'This is my third post', likes_counter: 0,
+                  comments_counter: 0)
     end
 
     before { visit user_path(user) }
@@ -28,7 +31,7 @@ RSpec.describe 'Posts', type: :feature do
       expect(page).to have_content(user.name)
     end
 
-    it "renders the number of posts the user has written" do
+    it 'renders the number of posts the user has written' do
       expect(page).to have_content(user.posts_counter)
     end
 

@@ -2,9 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'Post show page', type: :feature do
   let!(:user) { User.create(name: 'John Doe', posts_counter: 0) }
-  let!(:post) { Post.create(title: 'Test Post', text: 'Test Post, Lorem ipsum dolor sit amet.', author: user, likes_counter: 0, comments_counter: 0) }
-  let!(:comment1) { Comment.create(text: 'Comment 1', user: user, post: post) }
-  let!(:comment2) { Comment.create(text: 'Comment 2', user: user, post: post) }
+  let!(:post) do
+    Post.create(title: 'Test Post', text: 'Test Post, Lorem ipsum dolor sit amet.', author: user, likes_counter: 0,
+                comments_counter: 0)
+  end
+  let!(:comment1) { Comment.create(text: 'Comment 1', user:, post:) }
+  let!(:comment2) { Comment.create(text: 'Comment 2', user:, post:) }
 
   before do
     visit post_path(post)

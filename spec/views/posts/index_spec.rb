@@ -2,11 +2,20 @@ require 'rails_helper'
 
 RSpec.describe 'User post index page', type: :feature do
   let!(:user) { User.create(name: 'John Doe', photo: 'https://placehold.co/400', posts_counter: 0) }
-  let!(:post1) { user.posts.create(title: 'Post 1', text: 'Post 1, This is my first post, Lorem ipsum dolor sit amet.', likes_counter: 0, comments_counter: 0) }
-  let!(:post2) { user.posts.create(title: 'Post 2', text: 'Post 2, Lorem ipsum dolor sit amet.', likes_counter: 0, comments_counter: 0) }
-  let!(:post3) { user.posts.create(title: 'Post 3', text: 'Post 3, Lorem ipsum dolor sit amet.', likes_counter: 0, comments_counter: 0) }
-  let!(:comment1) { Comment.create(user: user, post: post1, text: 'my first comment') }
-  let!(:comment2) { Comment.create(user: user, post: post2, text: 'my second comment') }
+  let!(:post1) do
+    user.posts.create(title: 'Post 1', text: 'Post 1, This is my first post, Lorem ipsum dolor sit amet.',
+                      likes_counter: 0, comments_counter: 0)
+  end
+  let!(:post2) do
+    user.posts.create(title: 'Post 2', text: 'Post 2, Lorem ipsum dolor sit amet.', likes_counter: 0,
+                      comments_counter: 0)
+  end
+  let!(:post3) do
+    user.posts.create(title: 'Post 3', text: 'Post 3, Lorem ipsum dolor sit amet.', likes_counter: 0,
+                      comments_counter: 0)
+  end
+  let!(:comment1) { Comment.create(user:, post: post1, text: 'my first comment') }
+  let!(:comment2) { Comment.create(user:, post: post2, text: 'my second comment') }
 
   before do
     visit user_posts_path(user)
