@@ -35,5 +35,7 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-<p class='reg'> Already have an account? <%= link_to "log in", new_user_session_path %> </p>
+<p class='reg'> Already have an account? </p>
+
+<%= render "devise/shared/links" %>
 <div>
