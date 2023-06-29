@@ -1,7 +1,5 @@
 <%= stylesheet_link_tag 'style'%>
-<%= button_to "Sign Out", destroy_user_session_path, method: :delete, form_class: "sign-out-form", onclick: "window.location.href='/users/sign_in'" %>
-<%= link_to "Sign In", new_user_session_path %></br>
-<%= link_to "Sign Up", new_user_registration_path %>
+<%= button_to "Sign Out", destroy_user_session_path, method: :delete, form_class: "sign-out-form" %>
 
 <section class='user-section'>
   <% @users.each do |user| %>
