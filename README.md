@@ -18,7 +18,7 @@
 
 # 📖 Rails Blog <a name="about-project"></a>
 
-**Rails Blog** a classic example of a blog website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
+**Rails Blog** a classic example of a blog website that shows the list of posts and empower readers to interact with them by creating posts, adding comments and liking posts.
 
 ## 🗝️ Key Features <a name="key-features"></a>
 
