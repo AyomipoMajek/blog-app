@@ -79,3 +79,5 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'webdrivers'
 end
+
+gem 'devise'
