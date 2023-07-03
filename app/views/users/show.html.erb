@@ -35,7 +35,7 @@
       </div>
       <div class='add-button'>
         <button class="add-new">
-          <%= link_to 'Add New Post', new_user_post_path(user_id: current_user.id)%>
+          <%= link_to 'Add New Post', new_user_post_path(user_id: @current_user.id)%>
         </button>
       </div>
     </div>
@@ -44,7 +44,7 @@
       <p>This user has no posts yet!</p>
       <div class='add-button'>
         <button class="add-new">
-          <%= link_to 'Add New Post', new_user_post_path(user_id: current_user.id)%>
+          <%= link_to 'Add New Post', new_user_post_path(user_id: @current_user.id)%>
         </button>
       </div>
     </div>
